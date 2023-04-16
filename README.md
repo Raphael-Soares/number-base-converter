@@ -1,6 +1,6 @@
 # Conversor de Bases Numéricas
 
-Este é um programa em Python que permite a conversão de números de uma base para outra. O usuário deve inserir o número a ser convertido, a base em que está originalmente e a nova base desejada. O programa pode converter para bases decimais ou hexadecimais.
+Este é um programa em Python que permite a conversão de números de uma base para outra. O usuário deve inserir o número a ser convertido, a base em que está originalmente e a nova base desejada. 
 
 ## Como utilizar
 
