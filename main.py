@@ -12,6 +12,9 @@ def toDecimal(number, base):
     if newBase == 10:
         print(decimal)
         return
+    elif newBase == 16:
+        toHexa(decimal)
+        return
 
     toBase(decimal, newBase)
 
@@ -23,6 +26,15 @@ def toBase(decimal, base):
         decimal = decimal // base
 
     print(result)
+
+
+def toHexa(decimal):
+    hexa = ""
+    while decimal > 0:
+        hexa = str(decimal % 16) + hexa
+        decimal = decimal // 16
+
+    print(hexa)
 
 
 toDecimal(number, base)
