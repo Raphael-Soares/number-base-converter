@@ -16,31 +16,30 @@ def to_base(decimal, base):
 
 def print_ascii_interface():
     ascii_interface = """
-    ____     _____     __  
-    |  _ \   / ____|   /_ | 
-    | |_) | | (___      | | 
-    |  _ <   \___ \     | | 
-    | |_) |  ____) |    | | 
-    |____/  |_____/     |_| 
+{blue}  ____     _____     __  
+ |  _ \   / ____|   /_ | 
+ | |_) | | (___      | | 
+ |  _ <   \___ \     | | 
+ | |_) |  ____) |    | | 
+ |____/  |_____/     |_| {reset}
 
-                                           
-    """
-    print(Fore.BLUE + ascii_interface + Style.RESET_ALL)
+    """.format(blue=Fore.BLUE, reset=Style.RESET_ALL)
+    print(ascii_interface)
 
 def main():
     print_ascii_interface()
 
-    number = input("Digite um número: ")
-    base = int(input("Digite a base atual: "))
-    new_base = int(input("Digite a nova base: "))
+    number = input("{yellow}Digite um número:{reset} ".format(yellow=Fore.YELLOW, reset=Style.RESET_ALL))
+    base = int(input("{yellow}Digite a base atual:{reset} ".format(yellow=Fore.YELLOW, reset=Style.RESET_ALL)))
+    new_base = int(input("{yellow}Digite a nova base:{reset} ".format(yellow=Fore.YELLOW, reset=Style.RESET_ALL)))
 
     decimal = to_decimal(number, base)
 
     if new_base == 10:
-        print(Fore.GREEN + "Número convertido para base decimal:", decimal + Style.RESET_ALL)
+        print("{green}Número convertido para base decimal:{reset} {decimal}".format(green=Fore.GREEN, reset=Style.RESET_ALL, decimal=decimal))
     else:
         converted_number = to_base(decimal, new_base)
-        print(Fore.GREEN + f"Número convertido para base {new_base}:", converted_number + Style.RESET_ALL)
+        print("{green}Número convertido para base {new_base}:{reset} {converted_number}".format(green=Fore.GREEN, reset=Style.RESET_ALL, new_base=new_base, converted_number=converted_number))
 
 if __name__ == "__main__":
     main()
