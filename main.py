@@ -1,40 +1,29 @@
-number = input("Digite um número: ")
-base = int(input("Digite a base: "))
-
-newBase = int(input("Digite a nova base: "))
-
-
-def toDecimal(number, base):
+def to_decimal(number, base):
     decimal = 0
     for num in number:
         decimal = decimal * base + int(num)
+    return decimal
 
-    if newBase == 10:
-        print(decimal)
-        return
-    elif newBase == 16:
-        toHexa(decimal)
-        return
-
-    toBase(decimal, newBase)
-
-
-def toBase(decimal, base):
+def to_base(decimal, base):
+    digits = "0123456789ABCDEF"
     result = ""
     while decimal > 0:
-        result = str(decimal % base) + result
+        result = digits[decimal % base] + result
         decimal = decimal // base
+    return result
 
-    print(result)
+def main():
+    number = input("Digite um número: ")
+    base = int(input("Digite a base atual: "))
+    new_base = int(input("Digite a nova base: "))
 
+    decimal = to_decimal(number, base)
 
-def toHexa(decimal):
-    hexa = ""
-    while decimal > 0:
-        hexa = str(decimal % 16) + hexa
-        decimal = decimal // 16
+    if new_base == 10:
+        print("Número convertido para base decimal:", decimal)
+    else:
+        converted_number = to_base(decimal, new_base)
+        print("Número convertido para base", new_base, ":", converted_number)
 
-    print(hexa)
-
-
-toDecimal(number, base)
+if __name__ == "__main__":
+    main()
