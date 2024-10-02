@@ -4,5 +4,5 @@ Este é um programa que permite a conversão de números de uma base para outra.
 
 # Versões
 
-- Python
-- C
+- [Python](https://github.com/Raphael-Soares/number-base-converter/tree/python) 
+- [C](https://github.com/Raphael-Soares/number-base-converter/tree/main)
